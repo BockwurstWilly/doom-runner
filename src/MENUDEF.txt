@@ -1,0 +1,50 @@
+// Doom Runner main menu (replaces the Doom / Brutal Doom main menu)
+ListMenu "MainMenu"
+{
+	Class "RunnerMainMenu"
+	StaticPatch 60, 4, "RLOGO"
+	Selector "M_SKULL1", -32, -5
+	Font "BigFont", "Red"
+	LineSpacing 18
+	Position 100, 84
+	TextItem "$RR_MNU_PLAY", "l", "PlayerclassMenu"
+	TextItem "$RR_MNU_OPT", "o", "RunnerOptions"
+	RunnerLangItem "$RR_MNU_LANG", "s", "None"
+	TextItem "BRUTAL DOOM", "b", "BrutalMenu"
+	TextItem "$RR_MNU_QUIT", "q", "QuitMenu"
+}
+
+OptionValue "RunnerGfx"
+{
+	0, "$RR_LOW"
+	1, "$RR_MID"
+	2, "$RR_HIGH"
+}
+
+OptionValue "RunnerGore"
+{
+	0, "$RR_GORE0"
+	1, "$RR_GORE1"
+	2, "$RR_GORE2"
+	3, "$RR_GORE3"
+}
+
+// short options menu; the full GZDoom options stay reachable at the bottom
+OptionMenu "RunnerOptions"
+{
+	Class "RunnerOptionsMenu"
+	Title "$RR_OPT_TITLE"
+	RunnerGfxOption "$RR_OPT_GFX", "rr_gfx", "RunnerGfx"
+	StaticText "$RR_OPT_GFXHINT", "DarkGray"
+	RunnerGoreOption "$RR_OPT_GORE", "rr_gore", "RunnerGore"
+	StaticText " "
+	Slider "$RR_OPT_SFX", "snd_sfxvolume", 0, 1, 0.05, 2
+	Slider "$RR_OPT_MUS", "snd_musicvolume", 0, 1, 0.05, 2
+	Slider "$RR_OPT_MOUSE", "m_sensitivity_x", 0.5, 6, 0.25, 2
+	Option "$RR_OPT_FULL", "vid_fullscreen", "OnOff"
+	StaticText " "
+	Submenu "$RR_OPT_KEYS", "CustomizeControls"
+	SafeCommand "$RR_OPT_RESET", "netevent rr_reset"
+	StaticText " "
+	Submenu "$RR_OPT_ALL", "OptionsMenu"
+}

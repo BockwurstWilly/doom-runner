@@ -1,0 +1,19 @@
+Sprite "RCRTA0", 64, 64
+{
+	Offset 32, 63
+	Patch "CRATE1", 0, 0
+}
+
+Sprite "RCRTB0", 64, 64
+{
+	Offset 32, 63
+	Patch "CRATE2", 0, 0
+}
+
+// title logo (rendered at 3x, shown at 200x62 menu units)
+Graphic "RLOGO", 600, 186
+{
+	XScale 3.0
+	YScale 3.0
+	Patch "graphics/RLOGOHI.png", 0, 0
+}

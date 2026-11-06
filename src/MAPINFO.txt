@@ -1,0 +1,65 @@
+gameinfo
+{
+	PlayerClasses = "RunnerPlayer"
+	AddEventHandlers = "RunnerHandler"
+	StatusBarClass = "RunnerStatusBar"
+	CursorPic = "RCURS1"
+}
+
+clearepisodes
+episode MAP01
+{
+	name = "Doom Runner"
+	key = "d"
+	noskillmenu
+}
+
+// title scene (replaces Brutal Doom's title map)
+map TITLEMAP "Doom Runner"
+{
+	sky1 = "SKY3", 0
+	music = "D_DM2TTL"
+	nointermission
+	forcenoskystretch
+}
+
+// Episode 1: tech base corridor
+map MAP01 "Doom Runner - Raumbasis"
+{
+	levelnum = 1
+	sky1 = "SKY1", 0
+	music = "D_RUNNIN"
+	nointermission
+	nojump
+	nocrouch
+	nofreelook
+	noinfighting
+}
+
+// Episode 2: the city
+map MAP02 "Doom Runner - Stadt"
+{
+	levelnum = 2
+	sky1 = "SKY2", 0
+	music = "D_IN_CIT"
+	nointermission
+	nojump
+	nocrouch
+	nofreelook
+	forcenoskystretch
+	noinfighting
+}
+
+// Episode 3: hell
+map MAP03 "Doom Runner - Inferno"
+{
+	levelnum = 3
+	sky1 = "SKY3", 0
+	music = "D_ROMERO"
+	nointermission
+	nojump
+	nocrouch
+	nofreelook
+	forcenoskystretch
+	noinfighting
+}

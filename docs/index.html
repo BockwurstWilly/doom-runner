@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doom Runner – a GZDoom mod</title>
+<meta name="description" content="Doom Runner: those fake mobile game ads – but it's DOOM. A free GZDoom mod. Best played with Doom II and Brutal Doom.">
+<meta property="og:title" content="Doom Runner – a GZDoom mod">
+<meta property="og:description" content="Those fake mobile game ads – but it's DOOM. Download and play.">
+<meta property="og:image" content="shot1.jpg">
+<style>
+  :root { --red: #e0261a; --gold: #ffc23a; --bg: #0b0606; --panel: #1a0f0d; --text: #e9e2dc; --muted: #a8988e; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.55 "Segoe UI", Roboto, Arial, sans-serif; }
+  body::before { content: ""; position: fixed; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at 50% -10%, rgba(200,30,10,.35), transparent 60%); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; position: relative; }
+  .impact { font-family: Impact, "Arial Black", sans-serif; letter-spacing: .5px; text-transform: uppercase; }
+  header { text-align: center; padding: 34px 0 10px; }
+  header img { width: min(560px, 90%); filter: drop-shadow(0 6px 18px rgba(0,0,0,.8)); }
+  .tag { font-size: clamp(22px, 4vw, 34px); margin: 6px 0 0; }
+  .tag b { color: var(--red); }
+  .recommend { margin: 26px 0; padding: 26px 22px; text-align: center; border: 4px solid var(--red); border-radius: 12px;
+    background: repeating-linear-gradient(-45deg, #2a0c08, #2a0c08 18px, #200907 18px, #200907 36px);
+    box-shadow: 0 0 40px rgba(224,38,26,.35); }
+  .recommend .big { font-size: clamp(30px, 6vw, 58px); line-height: 1.05; color: #fff; text-shadow: 0 3px 0 #000, 0 0 18px rgba(224,38,26,.8); margin: 0; }
+  .recommend .big em { color: var(--gold); font-style: normal; }
+  .recommend p { margin: 12px 0 0; font-size: 18px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 26px 0 8px; }
+  .btn { display: inline-block; text-decoration: none; padding: 16px 28px; border-radius: 10px; font-size: 24px; color: #fff;
+    background: linear-gradient(#ff3b22, #a3140b); border: 2px solid #ff7a5c; box-shadow: 0 6px 0 #5e0b05, 0 10px 24px rgba(0,0,0,.5); }
+  .btn:hover { filter: brightness(1.1); }
+  .btn.alt { background: linear-gradient(#3a2622, #1d1210); border-color: #6b443b; box-shadow: 0 6px 0 #0c0706; font-size: 20px; }
+  .small { color: var(--muted); font-size: 14px; text-align: center; margin: 14px 0 0; }
+  .grid { display: grid; grid-template-columns: 340px 1fr; gap: 28px; align-items: start; margin: 34px 0; }
+  video { width: 100%; border-radius: 12px; border: 2px solid #3a221d; background: #000; }
+  h2 { font-size: 34px; margin: 0 0 10px; color: #fff; }
+  h2 span { color: var(--red); }
+  ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; }
+  ol.steps li { counter-increment: s; position: relative; padding: 12px 14px 12px 64px; margin: 0 0 12px; background: var(--panel); border-radius: 10px; border: 1px solid #33201b; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 14px; top: 10px; width: 36px; height: 36px; border-radius: 50%;
+    background: var(--red); color: #fff; font: 22px/36px Impact, sans-serif; text-align: center; }
+  ol.steps li.rec { border-color: var(--gold); }
+  ol.steps li.rec::before { background: var(--gold); color: #000; }
+  code { background: #2b1a17; padding: 1px 6px; border-radius: 4px; font-size: 15px; }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 10px 0 34px; }
+  .shots img { width: 100%; border-radius: 10px; border: 2px solid #3a221d; }
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 0 0 34px; }
+  .features div { background: var(--panel); border: 1px solid #33201b; border-radius: 10px; padding: 14px 16px; }
+  .features b { display: block; font: 21px Impact, sans-serif; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; }
+  footer { border-top: 1px solid #33201b; margin-top: 30px; padding: 20px 0 40px; color: var(--muted); font-size: 14px; }
+  footer a, .recommend a, ol.steps a { color: var(--gold); }
+  @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } .grid video { max-width: 360px; margin: 0 auto; display: block; }
+    .shots { grid-template-columns: repeat(2, 1fr); } .features { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="logo.png" alt="Doom Runner">
+    <p class="tag impact">Those fake mobile game ads … <b>but it's DOOM!</b></p>
+  </header>
+
+  <section class="recommend">
+    <p class="big impact">Strongly recommended:<br>Play with the <em>DOOM2.WAD</em><br>and <em>BRUTAL DOOM!</em></p>
+    <p>The download runs right away with the free Freedoom – but only the original Doom II plus
+      <a href="https://www.moddb.com/mods/brutal-doom" target="_blank" rel="noopener">Brutal Doom</a> gives you the full gore.</p>
+  </section>
+
+  <div class="cta">
+    <a class="btn impact" href="https://github.com/BockwurstWilly/doom-runner/releases/latest/download/DoomRunner-Windows.zip">Download for Windows</a>
+    <a class="btn alt impact" href="https://github.com/BockwurstWilly/doom-runner/releases/latest/download/DoomRunner.pk3">Mod only (.pk3)</a>
+  </div>
+  <p class="small">ZIP with GZDoom, Freedoom and the mod (approx. 33 MB) · The .pk3 alone is for your own GZDoom setup.</p>
+
+  <div class="grid">
+    <video controls playsinline preload="metadata" poster="poster.jpg">
+      <source src="trailer_en.mp4" type="video/mp4">
+    </video>
+    <div>
+      <h2 class="impact">How to <span>play</span></h2>
+      <ol class="steps">
+        <li><b>Download the ZIP</b> and extract it anywhere.</li>
+        <li><b>Double-click "Doom Runner.bat"</b> – done, the game starts with Freedoom.</li>
+        <li class="rec"><b>Recommended: original Doom II.</b> Copy your <code>DOOM2.WAD</code> into the extracted folder (next to the .bat).
+          It is in your Steam or GOG Doom II folder, on Steam e.g. <code>steamapps\common\Doom 2\base\</code>.</li>
+        <li class="rec"><b>Recommended: Brutal Doom.</b> Get it from <a href="https://www.moddb.com/mods/brutal-doom" target="_blank" rel="noopener">ModDB</a>
+          and put its <code>.pk3</code> file (name starts with "brutal") into the same folder. It is loaded automatically.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="features">
+    <div><b>Run &amp; gun</b>Your marine runs and shoots on his own – you steer left and right with the mouse.</div>
+    <div><b>Gates &amp; squad</b>Shoot the gates to upgrade them, pick up marines and build your own squad.</div>
+    <div><b>Hordes &amp; bosses</b>Zombie hordes, barrels, weapon crates – and tough bosses. Collect souls, upgrade, repeat.</div>
+  </div>
+
+  <div class="shots">
+    <img src="shot1.jpg" alt="Squad and explosion" loading="lazy">
+    <img src="shot2.jpg" alt="Upgrade gate" loading="lazy">
+    <img src="shot3.jpg" alt="Brutal Doom gore" loading="lazy">
+    <img src="shot4.jpg" alt="Marine squad" loading="lazy">
+  </div>
+
+  <footer>
+    <p><b>Controls:</b> mouse left/right = steer · click = buy upgrade / start · keyboard: A/D or arrow keys, 1/2/3, Space · ESC = menu.
+      Progress is saved automatically. The game can be switched between English and German in the main menu.</p>
+    <p><b>Included:</b> <a href="https://github.com/ZDoom/gzdoom" target="_blank" rel="noopener">GZDoom</a> (GPLv3) and
+      <a href="https://freedoom.github.io" target="_blank" rel="noopener">Freedoom</a> (BSD license). <b>Not included:</b> Doom II and Brutal Doom –
+      they belong to their respective owners. Doom Runner is a fan project, not affiliated with id Software or Bethesda.</p>
+    <p><a href="https://github.com/BockwurstWilly/doom-runner">Source code on GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>

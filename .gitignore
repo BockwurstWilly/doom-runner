@@ -1,0 +1,13 @@
+# build output and release assets (uploaded to GitHub Releases instead)
+*.pk3
+*.zip
+# videos / renders / checks in the project root
+/*.mp4
+/*.png
+/*.jpg
+# personal launchers with local paths, editor/tool folders
+/Start-DoomRunner*.bat
+/.claude/
+__pycache__/
+/README.txt
+/chk_*.png

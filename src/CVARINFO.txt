@@ -1,0 +1,10 @@
+server int rr_money = 0;
+server int rr_lvl_dmg = 0;
+server int rr_lvl_rate = 0;
+server int rr_lvl_hp = 0;
+server int rr_stage = 0;
+server noarchive int rr_autotest = 0;
+server noarchive int rr_testdrop = 0;
+user int rr_gfx = 1;
+user int rr_gore = 0;
+server noarchive float rr_camfov = 90;
