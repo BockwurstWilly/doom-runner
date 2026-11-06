@@ -111,7 +111,19 @@
       they belong to their respective owners. Doom Runner is a fan project, not affiliated with id Software or Bethesda.</p>
     <p><b>Doom Runner</b> is a mod by <b>BockwurstWilly</b> · <a href="https://github.com/BockwurstWilly/doom-runner">Source code on GitHub</a> ·
       <a href="https://github.com/BockwurstWilly/doom-runner/blob/main/LICENSE.md">CC BY-NC 4.0</a> – feel free to use parts in your own mods, just credit BockwurstWilly.</p>
+    <p id="dl" style="text-align:right;margin:0;color:#5a4a44;font-size:13px;"></p>
   </footer>
 </div>
+<script>
+  // total downloads of all release files (just the number)
+  fetch('https://api.github.com/repos/BockwurstWilly/doom-runner/releases?per_page=100')
+    .then(function (r) { return r.ok ? r.json() : []; })
+    .then(function (rel) {
+      var n = 0;
+      rel.forEach(function (r) { (r.assets || []).forEach(function (a) { n += a.download_count || 0; }); });
+      if (n > 0) document.getElementById('dl').textContent = n;
+    })
+    .catch(function () {});
+</script>
 </body>
 </html>
