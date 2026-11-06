@@ -143,7 +143,22 @@ class RunnerMainMenu : ListMenu
 		double y = sh * 0.9;
 		Screen.DrawText(f, Font.CR_BLACK, x + sc, y + sc, s, DTA_ScaleX, sc, DTA_ScaleY, sc);
 		Screen.DrawText(f, bd ? Font.CR_GREEN : Font.CR_GOLD, x, y, s, DTA_ScaleX, sc, DTA_ScaleY, sc);
+		RunnerMainMenu.DrawCredit();
 		DrawSoftCursor();
+	}
+
+	// author credit, bottom right (main menu and title screen)
+	static ui void DrawCredit()
+	{
+		int sw = Screen.GetWidth();
+		int sh = Screen.GetHeight();
+		double sc = max(1.0, sh / 720.0);
+		String s = StringTable.Localize("$RR_CREDIT");
+		Font f = NewSmallFont;
+		double x = sw - f.StringWidth(s) * sc - 12 * sc;
+		double y = sh - f.GetHeight() * sc - 8 * sc;
+		Screen.DrawText(f, Font.CR_BLACK, x + sc, y + sc, s, DTA_ScaleX, sc, DTA_ScaleY, sc);
+		Screen.DrawText(f, Font.CR_GRAY, x, y, s, DTA_ScaleX, sc, DTA_ScaleY, sc);
 	}
 
 	override void Init(Menu parent, ListMenuDescriptor desc)
@@ -296,5 +311,6 @@ extend class RunnerHandler
 		if (logo.IsValid()) Screen.DrawTexture(logo, false, 60, 4, DTA_Clean, true);
 		double a = 0.55 + 0.45 * sin(level.time * 6.0);
 		Txt(HudFont(), Font.CR_GOLD, StringTable.Localize("$RR_PRESSKEY"), sw * 0.5, sh * 0.86, 3.2 * u, a);
+		RunnerMainMenu.DrawCredit();
 	}
 }

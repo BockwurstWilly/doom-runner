@@ -24,6 +24,8 @@ Already have GZDoom? Just load `DoomRunner.pk3` (after Brutal Doom) with Doom II
 
 ## Credits
 
+- **Doom Runner** by **BockwurstWilly** – licensed [CC BY-NC 4.0](LICENSE.md). Feel free to use parts in your own mods – just credit BockwurstWilly.
+
 - Engine: [GZDoom](https://github.com/ZDoom/gzdoom) (GPLv3), shipped unmodified in the Windows package.
 - Free IWAD: [Freedoom](https://freedoom.github.io) (modified BSD), shipped in the Windows package.
 - Doom II and Brutal Doom are **not** included and belong to their respective owners.

@@ -1,5 +1,5 @@
-DOOM RUNNER - a GZDoom mod
-==========================
+DOOM RUNNER - a GZDoom mod by BockwurstWilly
+============================================
 
 Start: double-click "Doom Runner.bat". That's it.
 
@@ -23,6 +23,9 @@ The game can be switched between English and German in the main menu.
 
 CREDITS / LICENSES
 ------------------
+- Doom Runner by BockwurstWilly - CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/)
+  Feel free to use parts in your own mods - just credit BockwurstWilly.
+  https://github.com/BockwurstWilly/doom-runner
 - GZDoom (engine) - GPLv3, source code: https://github.com/ZDoom/gzdoom  (licenses.zip)
 - Freedoom (freedoom2.wad) - modified BSD license, https://freedoom.github.io  (Freedoom-COPYING.txt)
 - Doom II and Brutal Doom are NOT included and belong to their respective owners.
